@@ -1,0 +1,408 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  height: 100vh;
+}
+
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.controller {
+  position: absolute;
+  top: -5vmax;
+  left: calc(35% - 11vmax);
+  z-index: 2;
+  width: 22vmax;
+  padding: 0.5vmin;
+  border: 0.5vmin solid #696969;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  background: #fff;
+  -webkit-transition: top 0.5s linear;
+  -o-transition: top 0.5s linear;
+  transition: top 0.5s linear;
+}
+
+.controller_showed {
+  top: 0;
+}
+
+.controller-item {
+  width: 3vmax;
+  height: 3vmax;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.left-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 35%;
+  -webkit-transition: top 1s ease-in-out;
+  -o-transition: top 1s ease-in-out;
+  transition: top 1s ease-in-out;
+}
+
+.left-slide_rotate {
+  height: 35%;
+  width: 600%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: left 1s ease-in-out;
+  -o-transition: left 1s ease-in-out;
+  transition: left 1s ease-in-out;
+}
+
+.left-slide > div {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.left-slide h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  margin-top: -30px;
+  text-align: center;
+}
+
+.right-slide {
+  position: absolute;
+  top: 0;
+  left: 35%;
+  width: 65%;
+  height: 100%;
+  -webkit-transition: top 1s ease-in-out;
+  -o-transition: top 1s ease-in-out;
+  transition: top 1s ease-in-out;
+}
+
+.right-slide_rotate {
+  top: 35%;
+  left: 0;
+  height: 65%;
+  width: 600%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: left 1s ease-in-out;
+  -o-transition: left 1s ease-in-out;
+  transition: left 1s ease-in-out;
+}
+
+.right-slide > div {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+  width: 100%;
+}
+
+button {
+  background-color: #fff;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 15px;
+}
+
+button:hover {
+  color: #222;
+}
+
+button:focus {
+  outline: none;
+}
+
+.action-buttons {
+  position: absolute;
+  left: calc(35% - 23px);
+  top: 50%;
+  z-index: 3;
+  width: 46px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+
+.action-buttons_rotate {
+  left: 35%;
+  top: calc(35vh - 72px);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.down-button {
+  margin-left: -45%;
+  margin-right: 45%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.down-button,
+.redo-button,
+.up-button {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.down-button:hover::before,
+.up-button:hover::before {
+  content: "click or swipe slide by mouse";
+}
+
+.down-button_rotate:hover,
+.up-button_rotate:hover {
+  width: 46px;
+  height: 48px;
+}
+
+.down-button_rotate:hover::before,
+.redo-button_rotate:hover::before {
+  content: none;
+}
+
+.redo-button {
+  border-radius: 5px;
+}
+
+.redo-button:hover::after {
+  content: "click to rotate the slider";
+}
+
+.redo-button_rotate:hover::after {
+  content: none;
+}
+
+.up-button {
+  margin-left: 50%;
+  margin-right: -50%;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.up-button_rotate:hover::before {
+  content: none;
+}
+
+.down-button_rotate:hover::after,
+.up-button_rotate:hover::before {
+  content: "click or swipe slide by mouse";
+  width: 31px;
+  padding-left: 15px;
+  margin-left: -15px;
+  margin-top: 5px;
+  padding-top: 5px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+  writing-mode: vertical-lr;
+  background-color: #fff;
+}
+
+.down-button_rotate:hover::after {
+  border-top-right-radius: 5px;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.up-button_rotate:hover::before {
+  padding-bottom: 5px;
+  margin-bottom: -5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -webkit-transform: rotate(180deg) translateY(100%);
+  -ms-transform: rotate(180deg) translateY(100%);
+  transform: rotate(180deg) translateY(100%);
+}
+
+.up-button_rotate:hover #up-btn::before {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transform: translateY(-1375%);
+  -ms-transform: translateY(-1375%);
+  transform: translateY(-1375%);
+}
+
+.down-button_last {
+  margin-left: -85px;
+}
+
+.down-button_rotate-last {
+  margin-left: -55px;
+  margin-top: 30px;
+  margin-bottom: -30px;
+  border-radius: 5px 5px 0 0;
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+.up-button_rotate-first {
+  margin-left: 10px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  border-radius: 0 0 5px 5px;
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+.down-button_rotate-last:hover {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.down-button_rotate-last:hover::after {
+  content: none;
+}
+
+.up-button_rotate-first:hover {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.up-button_rotate-first:hover::before {
+  content: none;
+}
+
+.bulb-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  border-radius: 5px;
+}
+
+.bulb-button:hover::before {
+  content: "click to turn on/off night mode";
+}
+
+.clue {
+  position: absolute;
+  z-index: 5;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 800;
+  color: #000;
+}
+
+.clue_invert {
+  color: #fff;
+  -webkit-transition: color 1s ease-in-out;
+  -o-transition: color 1s ease-in-out;
+  transition: color 1s ease-in-out;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s, visibility 0s linear 0.3s;
+  -o-transition: opacity 0.5s, visibility 0s linear 0.3s;
+  transition: opacity 0.5s, visibility 0s linear 0.3s;
+}
+.popup_opened {
+  visibility: visible;
+  opacity: 1;
+}
+.popup__container {
+  position: relative;
+  z-index: 5;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 5vmin;
+  border-radius: 3vmin;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.popup-button {
+  margin-top: 5vmin;
+  border-radius: 2vmin;
+  background: mediumblue;
+  color: #fff;
+}
+
+.invert {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}

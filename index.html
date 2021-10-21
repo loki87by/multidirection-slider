@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/icon.svg">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Vertical Slider</title>
+  </head>
+  <body>
+    <main class="slider-container">
+      <div class="controller">
+        <div
+          id="item-1"
+          class="controller-item"
+          style="background-color: #fd3555"
+        ></div>
+        <div
+          id="item-2"
+          class="controller-item"
+          style="background-color: #2a86ba"
+        ></div>
+        <div
+          id="item-3"
+          class="controller-item"
+          style="background-color: #252e33"
+        ></div>
+        <div
+          id="item-4"
+          class="controller-item"
+          style="background-color: #ffb866"
+        ></div>
+        <div
+          id="item-5"
+          class="controller-item"
+          style="background-color: #80dd54"
+        ></div>
+        <div
+          id="item-6"
+          class="controller-item"
+          style="background-color: #86390d"
+        ></div>
+      </div>
+      <section class="left-slide">
+        <div style="background-color: #fd3555">
+          <h2>Nature flower</h2>
+          <p>all in pink</p>
+        </div>
+        <div style="background-color: #2a86ba">
+          <h2>Bluuue Sky</h2>
+          <p>with it's mountains</p>
+        </div>
+        <div style="background-color: #252e33">
+          <h2>Lonely castle</h2>
+          <p>in the wilderness</p>
+        </div>
+        <div style="background-color: #ffb866">
+          <h2>Flying eagle</h2>
+          <p>in the sunset</p>
+        </div>
+        <div style="background-color: #80dd54">
+          <h2>Ferns forest</h2>
+          <p>all in green</p>
+        </div>
+        <div style="background-color: #86390d">
+          <h2>Wood</h2>
+          <p>in the fireplace</p>
+        </div>
+      </section>
+      <div class="right-slide">
+        <div
+          style="
+            background-image: url('./assets/ogon-kamin-drova-min.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=da4ca7a78004349f1b63f257e50e4360&auto=format&fit=crop&w=1050&q=80');
+          "
+        ></div>
+        <div
+          style="
+            background-image: url('./assets/plants-green-leaf-forest.jpg?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=da4ca7a78004349f1b63f257e50e4360&auto=format&fit=crop&w=1050&q=80');
+          "
+        ></div>
+        <div
+          style="
+            background-image: url('https://images.unsplash.com/photo-1508768787810-6adc1f613514?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e27f6661df21ed17ab5355b28af8df4e&auto=format&fit=crop&w=1350&q=80');
+          "
+        ></div>
+        <div
+          style="
+            background-image: url('https://images.unsplash.com/photo-1519981593452-666cf05569a9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=90ed8055f06493290dad8da9584a13f7&auto=format&fit=crop&w=715&q=80');
+          "
+        ></div>
+        <div
+          style="
+            background-image: url('https://images.unsplash.com/photo-1486899430790-61dbf6f6d98b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8ecdee5d1b3ed78ff16053b0227874a2&auto=format&fit=crop&w=1002&q=80');
+          "
+        ></div>
+        <div
+          style="
+            background-image: url('https://images.unsplash.com/photo-1510942201312-84e7962f6dbb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=da4ca7a78004349f1b63f257e50e4360&auto=format&fit=crop&w=1050&q=80');
+          "
+        ></div>
+      </div>
+      <div class="action-buttons">
+        <button class="down-button">
+          <i class="fas fa-arrow-down"></i>
+        </button>
+        <button class="redo-button">
+          <i class="fas fa-redo"></i>
+        </button>
+        <button class="up-button">
+          <i class="fas fa-arrow-up" id="up-btn"></i>
+        </button>
+      </div>
+      <button class="bulb-button">
+        <i class="fas fa-lightbulb"></i>
+      </button>
+    </main>
+    <section class="popup">
+      <div class="popup__container">
+        <h3>
+          Music is played on the page, if it bothers you, you can turn off the
+          volume with the mouse wheel
+        </h3>
+        <button class="popup-button">I got it</button>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
